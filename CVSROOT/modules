@@ -34,7 +34,7 @@ jungerl/config
 
 # Added by tobbe, just for convenience...
 
-esmb -a Makefile README doc config support lib/esmb
+esmb -a jungerl/Makefile jungerl/README jungerl/doc jungerl/config jungerl/support jungerl/lib/esmb
 
 
 
