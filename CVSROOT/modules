@@ -32,5 +32,9 @@
 eppnetfiles -a jungerl/lib/enfs jungerl/lib/rpc jungerl/lib/msc jungerl/support
 jungerl/config
 
+# Added by tobbe, just for convenience...
+
+esmb -a Makefile README doc config support lib/esmb
+
 
 
