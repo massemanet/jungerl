@@ -24,3 +24,12 @@
 # character to interpose another module into the current module.  This
 # can be useful for creating a module that consists of many directories
 # spread out over the entire source repository.
+
+
+# Added by klacke, used by the eppnet application to
+# Just check out the files we need ....
+
+eppnet_files -a jungerl/lib/enfs jungerl/lib/rpc jungerl/lib/msc
+
+
+
