@@ -1,18 +1,14 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>Welcome to EDoc
-</title>
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-</head>
-<body bgcolor="white">
-<h1>Welcome to EDoc
-</h1>
-<p>Copyright © 2003 Richard Carlsson</p>
-<p><b>Version:</b> 0.6a (Jungerl)</p>
-<p><b>Authors:</b> Richard Carlsson (<a href="mailto:richardc@csd.uu.se"><tt>richardc@csd.uu.se</tt></a>).</p>
-EDoc is the Erlang program documentation generator. Inspired by the
-Javadoc<sup><font size="-3">TM</font></sup> tool for the Java<sup><font size="-3">TM</font></sup> programming language, EDoc is adapted to the
+
+	EDoc overview page
+
+@author Richard Carlsson <richardc@csd.uu.se>
+@copyright 2003 Richard Carlsson
+@version {@vsn}
+@title Welcome to EDoc
+
+@doc EDoc is the Erlang program documentation generator. Inspired by the
+Javadoc<sup><font size="-3">TM</font></sup> tool for the Java<sup><font
+size="-3">TM</font></sup> programming language, EDoc is adapted to the
 conventions of the Erlang world, and has several features not found in
 Javadoc. Since the first public release (v. 0.1), a lot of new
 functionality has been added, and most of the code has been completely
@@ -61,7 +57,7 @@ definitions). Other constructs are ignored; e.g., in:
 
   -record(foo, {x, y, z}).
 
-  print(X) -&gt; ...</pre>
+  print(X) -> ...</pre>
 
 the <code>@doc</code> tag is associated with the function
 <code>print/1</code>.</p>
@@ -81,18 +77,18 @@ in the "footer".</p>
 <h3><a name="usage">Running EDoc</a></h3>
 <p>The following are the main functions for running EDoc:
     <ul>
-      <li><a href="edoc.html#application-2"><code>edoc:application/2</code></a>: Creates documentation for a
+      <li>{@link edoc:application/2}: Creates documentation for a
 	  typical Erlang application.</li>
-      <li><a href="edoc.html#packages-2"><code>edoc:packages/2</code></a>: Creates documentation for one or
+      <li>{@link edoc:packages/2}: Creates documentation for one or
 	  more packages, automatically locating source files.</li>
-      <li><a href="edoc.html#files-2"><code>edoc:files/2</code></a>: Creates documentation for a
+      <li>{@link edoc:files/2}: Creates documentation for a
 	  specified set of source files.</li>
-      <li><a href="edoc.html#run-3"><code>edoc:run/3</code></a>: General interface function; the common
+      <li>{@link edoc:run/3}: General interface function; the common
           back-end for the above functions. Options are documented here.</li>
     </ul>
 </p>
 
-<p>Note that the function <a href="edoc.html#file-2"><code>edoc:file/2</code></a> belongs to the old
+<p>Note that the function {@link edoc:file/2} belongs to the old
 interface (from EDoc version 0.1) and is now deprecated.</p>
 
 
@@ -110,12 +106,12 @@ interface (from EDoc version 0.1) and is now deprecated.</p>
 <pre>
    -ifdef(DEBUG).
    %% @doc ...
-   foo(...) -&gt; ...
+   foo(...) -> ...
    -endif.
    %% @clear
 
    %% @doc ...
-   bar(...) -&gt; ...</pre>
+   bar(...) -> ...</pre>
 
         the <code>@clear</code> tag makes sure that EDoc does not see
 	two <code>@doc</code> tags before the function <code>bar</code>,
@@ -194,10 +190,10 @@ interface (from EDoc version 0.1) and is now deprecated.</p>
 <pre>
    %% @author Richard Carlsson</pre>
 <pre>
-   %% @author Richard Carlsson &lt;richardc@csd.uu.se&gt;
+   %% @author Richard Carlsson &lt;richardc@csd.uu.se>
    %%   [http://www.csd.uu.se/~richardc/]</pre>
 <pre>
-   %% @author &lt;richardc@csd.uu.se&gt;</pre>
+   %% @author &lt;richardc@csd.uu.se></pre>
 <pre>
    %% @author richardc@csd.uu.se [http://www.csd.uu.se/~richardc/]</pre></p>
       </dd>
@@ -212,10 +208,10 @@ interface (from EDoc version 0.1) and is now deprecated.</p>
 
       <dd>Mark the module as deprecated, indicating that it should no
       longer be used. The content must be well-formed XHTML, and should
-      preferably include a <code>{@link}</code> reference to a
+      preferably include a <code>@{@link}</code> reference to a
       replacement; as in:
 <pre>
-   %% @deprecated Please use the module {@link foo} instead.</pre></dd>
+   %% @deprecated Please use the module @{@link foo} instead.</pre></dd>
 
   <dt><code><a name="mtag-doc">@doc</a></code></dt>
       <dd>Describes the module, using well-formed XHTML text. The
@@ -223,7 +219,7 @@ interface (from EDoc version 0.1) and is now deprecated.</p>
       <a href="#ftag-doc">function tag</a> below
       for details). For example.:
 <pre>
-   %% @doc This is a &lt;em&gt;very&lt;/em&gt; useful module. It is ...</pre></dd>
+   %% @doc This is a &lt;em>very&lt;/em> useful module. It is ...</pre></dd>
 
   <dt><code><a name="mtag-hidden">@hidden</a></code></dt>
       <dd>Marks the module so that it will not appear in the
@@ -243,10 +239,10 @@ interface (from EDoc version 0.1) and is now deprecated.</p>
       such as an article, book, or web site. The content must be
       well-formed XHTML text. Examples:
 <pre>
-   %% @reference Pratchett, T., &lt;em&gt;Interesting Times&lt;/em&gt;,
+   %% @reference Pratchett, T., &lt;em>Interesting Times&lt;/em>,
    %% Victor Gollancz Ltd, 1994.</pre>
 <pre>
-   %% @reference See &lt;a href="www.google.com"&gt;Google&lt;/a&gt; for
+   %% @reference See &lt;a href="www.google.com">Google&lt;/a> for
    %% more information.</pre></dd>
 
   <dt><code><a name="mtag-see">@see</a></code></dt>
@@ -300,7 +296,7 @@ interface (from EDoc version 0.1) and is now deprecated.</p>
       interface), so that it will not appear in the normal
       documentation. (If "private" documentation is generated, the
       function will be included.) Only useful for exported functions,
-      e.g. entry points for <code>spawn</code>. (Non-exported functions are
+      e.g. entry points for `spawn'. (Non-exported functions are
       always "private".) The content can be used as a comment; it is
       ignored by EDoc.</dd>
 
@@ -340,42 +336,42 @@ interface (from EDoc version 0.1) and is now deprecated.</p>
 
 <h3><a name="refs">References</a></h3>
 
-<p>In several contexts (<code>@see</code> tags, <code>@link</code> macros, etc.), EDoc lets
+<p>In several contexts (`@see' tags, `@link' macros, etc.), EDoc lets
 you refer to the generated documentation for modules, functions,
 datatypes, and applications, using a simple and compact syntax. The
 possible formats for references are:
 <center>
 <table border="1">
   <tr><th>Reference syntax</th><th>Example</th></tr>
-  <tr><td><code>Module</code></td><td><a href="edoc_run.html"><code>edoc_run</code></a></td></tr>
-  <tr><td><code>Function/Arity</code></td><td><code>file/2</code> *</td></tr>
-  <tr><td><code>Module:Function/Arity</code></td><td><a href="edoc.html#application-2"><code>edoc:application/2</code></a></td></tr>
-  <tr><td><code>Type()</code></td><td><code>filename()</code> *</td></tr>
-  <tr><td><code>Module:Type()</code></td><td><a href="edoc.html#type-edoc_module"><code>edoc:edoc_module()</code></a></td></tr>
-  <tr><td><code>//Application</code></td><td><a href="/usr/local/home/richardc/src/erl/jungerl/lib/edoc/doc/index.html" target="_top"><code>//edoc</code></a></td></tr>
-  <tr><td><code>//Application/Module</code></td><td><a href="/usr/local/home/richardc/src/erl/jungerl/lib/edoc/doc/edoc_doclet.html"><code>//edoc/edoc_doclet</code></a></td></tr>
-  <tr><td><code>//Application/Module:Function/Arity</code></td><td><a href="/usr/local/home/richardc/src/erl/jungerl/lib/edoc/doc/edoc_run.html#file-1"><code>//edoc/edoc_run:file/1</code></a></td></tr>
-  <tr><td><code>//Application/Module:Type()</code></td><td><a href="/usr/local/home/richardc/src/erl/jungerl/lib/edoc/doc/edoc.html#type-edoc_module"><code>//edoc/edoc:edoc_module()</code></a></td></tr>
+  <tr><td>`Module'</td><td>{@link edoc_run}</td></tr>
+  <tr><td>`Function/Arity'</td><td>`file/2' *</td></tr>
+  <tr><td>`Module:Function/Arity'</td><td>{@link edoc:application/2}</td></tr>
+  <tr><td>`Type()'</td><td>`filename()' *</td></tr>
+  <tr><td>`Module:Type()'</td><td>{@link edoc:edoc_module()}</td></tr>
+  <tr><td>`//Application'</td><td>{@link //edoc}</td></tr>
+  <tr><td>`//Application/Module'</td><td>{@link //edoc/edoc_doclet}</td></tr>
+  <tr><td>`//Application/Module:Function/Arity'</td><td>{@link //edoc/edoc_run:file/1}</td></tr>
+  <tr><td>`//Application/Module:Type()'</td><td>{@link //edoc/edoc:edoc_module()}</td></tr>
 </table>
 </center>
 </p>
 
 <p>EDoc will resolve references using the information it finds in
-<code>edoc-info</code>-files at the locations specified with the <code>doc_path</code>
+`edoc-info'-files at the locations specified with the `doc_path'
 option. EDoc will automatically (and somewhat intelligently) try to find
-any local <code>edoc-info</code>-files using the current code path, and add them to
-the end of the <code>doc_path</code> list. The target doc-directory is also
+any local `edoc-info'-files using the current code path, and add them to
+the end of the `doc_path' list. The target doc-directory is also
 searched for an existing info file; this allows documentation to be
-built incrementally. (Use the <code>new</code> option to ignore any old info
+built incrementally. (Use the `new' option to ignore any old info
 file.)</p>
 
 <p>Note that if the name of a module, function or datatype is explicitly
-qualified with an application (as in "<code>//edoc/edoc_run</code>"), this
+qualified with an application (as in "`//edoc/edoc_run'"), this
 overrides any other information about that name, and the reference will
 be made relative to the location of the application (if it can be
-found). This makes it possible to refer to e.g. a module "<code>fred</code>" as
-"<code>//foo/fred</code>" without accidentally getting a reference to
-"<code>//bar/fred</code>". You should not use this form of explicit references for
+found). This makes it possible to refer to e.g. a module "`fred'" as
+"`//foo/fred'" without accidentally getting a reference to
+"`//bar/fred'". You should not use this form of explicit references for
 names that are local to the application you are currently creating -
 they will always be resolved correctly.</p>
 
@@ -414,7 +410,7 @@ See <a href="#escapes">Escape sequences</a> below for details.</p>
 reserved for use by EDoc. Headings in documentation source code should
 start at <code>h3</code>.</p>
 
-<p>EDoc uses <a href="/usr/local/home/richardc/hipe/otp/lib/xmerl/doc/index.html" target="_top">XMerL</a> to parse and export XML markup.</p>
+<p>EDoc uses {@link //xmerl. XMerL} to parse and export XML markup.</p>
 
 <h3><a name="typespecs">Type specification syntax</a></h3>
 
@@ -427,7 +423,7 @@ following a <code>@spec</code> tag:
     <td><code>Spec</code></td>
     <td>::=</td>
     <td><code>FunType Def*
-	  <br>| FunctionName FunType Def*</code></td>
+	  <br/>| FunctionName FunType Def*</code></td>
   </tr>
   <tr valign="top">
     <td><code>FunctionName</code></td>
@@ -437,19 +433,19 @@ following a <code>@spec</code> tag:
   <tr valign="top">
     <td><code>FunType</code></td>
     <td>::=</td>
-    <td><code>"(" UnionTypes? ")" "-&gt;" UnionType</code></td>
+    <td><code>"(" UnionTypes? ")" "->" UnionType</code></td>
   </tr>
   <tr valign="top">
     <td><code>UnionTypes</code></td>
     <td>::=</td>
     <td><code>UnionType
-	  <br>| UnionType "," UnionTypes</code></td>
+	  <br/>| UnionType "," UnionTypes</code></td>
   </tr>
   <tr valign="top">
     <td><code>UnionType</code></td>
     <td>::=</td>
     <td><code>UnionList
-	  <br>| Name "::" UnionList</code></td>
+	  <br/>| Name "::" UnionList</code></td>
   </tr>
   <tr valign="top">
     <td><code>Name</code></td>
@@ -460,23 +456,23 @@ following a <code>@spec</code> tag:
     <td><code>UnionList</code></td>
     <td>::=</td>
     <td><code>Type
-	  <br>| Type "+" UnionList
-	  <br>| Type "|" UnionList</code></td>
+	  <br/>| Type "+" UnionList
+	  <br/>| Type "|" UnionList</code></td>
   </tr>
   <tr valign="top">
     <td><code>Type</code></td>
     <td>::=</td>
     <td><code>TypeVariable
-	  <br>| Atom
-	  <br>| Integer
-	  <br>| Float
-	  <br>| FunType
-	  <br>| "{" UnionTypes? "}"
-	  <br>| "[" "]"
-	  <br>| "[" UnionType "]"
-	  <br>| TypeName "(" UnionTypes? ")"
-	  <br>| ModuleName ":" TypeName "(" UnionTypes? ")"
-	  <br>| "//" AppName "/" ModuleName ":" TypeName "(" UnionTypes? ")"</code></td>
+	  <br/>| Atom
+	  <br/>| Integer
+	  <br/>| Float
+	  <br/>| FunType
+	  <br/>| "{" UnionTypes? "}"
+	  <br/>| "[" "]"
+	  <br/>| "[" UnionType "]"
+	  <br/>| TypeName "(" UnionTypes? ")"
+	  <br/>| ModuleName ":" TypeName "(" UnionTypes? ")"
+	  <br/>| "//" AppName "/" ModuleName ":" TypeName "(" UnionTypes? ")"</code></td>
   </tr>
   <tr valign="top">
     <td><code>TypeVariable</code></td>
@@ -492,7 +488,7 @@ following a <code>@spec</code> tag:
     <td><code>ModuleName</code></td>
     <td>::=</td>
     <td><code>Atom
-          <br>| ModuleName "." Atom</code></td>
+          <br/>| ModuleName "." Atom</code></td>
   </tr>
   <tr valign="top">
     <td><code>AppName</code></td>
@@ -503,37 +499,37 @@ following a <code>@spec</code> tag:
     <td><code>Def</code></td>
     <td>::=</td>
     <td><code>TypeVariable "=" UnionType
-	  <br>| TypeName "(" TypeVariables? ")" "=" UnionType</code></td>
+	  <br/>| TypeName "(" TypeVariables? ")" "=" UnionType</code></td>
   </tr>
   <tr valign="top">
     <td><code>TypeVariables</code></td>
     <td>::=</td>
     <td><code>TypeVariable
-	  <br>| TypeVariable "," TypeVariables</code></td>
+	  <br/>| TypeVariable "," TypeVariables</code></td>
   </tr>
 </table>
 </p>
 
 <p>Examples:
 <pre>
-    %% @spec my_function(X::integer()) -&gt; integer()</pre>
+    %% @spec my_function(X::integer()) -> integer()</pre>
 <pre>
-    %% @spec (X::integer()) -&gt; integer()</pre>
+    %% @spec (X::integer()) -> integer()</pre>
 <pre>
-    %% @spec sqrt(float()) -&gt; float()</pre>
+    %% @spec sqrt(float()) -> float()</pre>
 <pre>
-    %% @spec pair(S, T) -&gt; {S, T}</pre>
+    %% @spec pair(S, T) -> {S, T}</pre>
 <pre>
-    %% @spec append(List, List) -&gt; List
+    %% @spec append(List, List) -> List
     %%           List = [term()]</pre>
 <pre>
-    %% @spec append(A::List, B::List) -&gt; List
+    %% @spec append(A::List, B::List) -> List
     %%           List = [term()]</pre>
 <pre>
-    %% @spec open(File::filename()) -&gt; file_descriptor()
+    %% @spec open(File::filename()) -> file_descriptor()
     %%           filename() = string() + atom()</pre>
 <pre>
-    %% @spec close(graphics:window()) -&gt; ok</pre>
+    %% @spec close(graphics:window()) -> ok</pre>
 
 In the above examples, <code>X</code>, <code>A</code>, <code>B</code>
 and <code>File</code> are parameter names, used for referring to the
@@ -555,9 +551,9 @@ For example, <code>[atom()|integer()]</code> means the same thing as
 integers.</p>
 
 <p>If only a type variable is given for a parameter, as in
-"<code>pair(S, T) -&gt; ...</code>", the same variable name may implicitly
+"<code>pair(S, T) -> ...</code>", the same variable name may implicitly
 be used as the parameter name; there is no need to write
-"<code>pair(S::S, T::T) -&gt; ...</code>".</p>
+"<code>pair(S::S, T::T) -> ...</code>".</p>
 
 <p>EDoc automatically extracts possible parameter names from the source
 code, to be used if no parameter name is given in the specification (or
@@ -576,7 +572,7 @@ the form of the definitions that may follow a <code>@type</code> tag:
     <td><code>Typedef</code></td>
     <td>::=</td>
     <td><code>TypeName "(" TypeVariables? ")" Def*
-	  <br>| TypeName "(" TypeVariables? ")" "=" UnionType Def*</code></td>
+	  <br/>| TypeName "(" TypeVariables? ")" "=" UnionType Def*</code></td>
   </tr>
 </table>
 </p>
@@ -638,7 +634,7 @@ Details:
   <li><code>deep_string()</code> is recursively defined as
       <code>[char()+deep_string()]</code>.</li>
   <li><code>none()</code> means "no data type". E.g., a function
-      that never returns has type <code>(...) -&gt; none()</code></li>
+      that never returns has type <code>(...) -> none()</code></li>
 </ul></p>
 
 
@@ -647,18 +643,18 @@ Details:
 Before the content of a tag is parsed, the text undergoes <em>macro
 expansion</em>. The syntax for macro calls is:
 <pre>
-    {@<em>name</em>}</pre>
+    @{@<em>name</em>}</pre>
 or
 <pre>
-    {@<em>name</em> <em>argument</em>}</pre>
+    @{@<em>name</em> <em>argument</em>}</pre>
 where <em>name</em> and <em>argument</em> are separated by one or more
 whitespace characters. The argument can be any text, which may contain
-other macro calls. The number of non-escaped "<code>{@</code>" and
+other macro calls. The number of non-escaped "<code>@{@</code>" and
 "<code>}</code>" delimiters must be balanced.
 
 <p> The argument text is first expanded in the current environment, and
 the result is bound to the <em>macro parameter</em>, written
-<code>{@?}</code>. (If no argument is given, <code>{@?}</code> is
+<code>@{@?}</code>. (If no argument is given, <code>@{@?}</code> is
 bound to the empty string.)  The macro definition is then substituted
 for the call, and expansion continues over the resulting text. Recursive
 macro expansions are not allowed.</p>
@@ -666,48 +662,49 @@ macro expansions are not allowed.</p>
 <h4>User-defined macros</h4>
 
 Users can define their own macros by using the <code>def</code> EDoc
-option; see <a href="edoc.html#file-2"><code>edoc:file/2</code></a> and <a href="edoc.html#get_doc-2"><code>edoc:get_doc/2</code></a> for more
+option; see {@link edoc:file/2} and {@link edoc:get_doc/2} for more
 information.
 
 <h4><a name="predefmacros">Predefined macros</a></h4>
 <dl>
-  <dt><code><a name="predefmacro-date">{@date}</a></code></dt>
+  <dt><code><a name="predefmacro-date">@{@date}</a></code></dt>
       <dd>Expands to the current date, as "<tt>Month Day Year</tt>",
-      e.g. "Dec 3 2004".</dd>
-  <dt><code><a name="predefmacro-docRoot">{@docRoot}</a></code></dt>
+      e.g. "{@date}".</dd>
+  <dt><code><a name="predefmacro-docRoot">@{@docRoot}</a></code></dt>
       <dd>Expands to the relative URL path (such as
       <code>"../../.."</code>) from the current page to the root
       directory of the generated documentation. This can be used to
       create XHTML references such as <code>&lt;img
-      src="{@docRoot}/images/logo.jpeg"&gt;</code> that are independent
+      src="@{@docRoot}/images/logo.jpeg"&gt;</code> that are independent
       of how deep down in a package structure they occur. If packages
       are not used (i.e., if all modules are in the "empty" package),
-      <code>{@docRoot}</code> will always resolve to the empty
+      <code>@{@docRoot}</code> will always resolve to the empty
       string.</dd>
-  <dt><code><a name="predefmacro-link">{@link <em>reference</em>.
+  <dt><code><a name="predefmacro-link">@{@link <em>reference</em>.
 		    <em>description</em>}</a></code></dt>
       <dd>This creates an in-line hypertext link; cf. the
       <code>@see</code> <a href="#ftag-see">function tag</a> above for
       details. The description text (including the period separator)
       is optional; if no text is given, the reference itself is
-      used. For example, <code>{@link edoc:file/2}</code> creates the
-      link <a href="edoc.html#file-2"><code>edoc:file/2</code></a>, and <code>{@link
-      edoc:file/2. &lt;em&gt;this&lt;/em&gt;}</code> creates <a href="edoc.html#file-2"><em>this</em></a> link.</dd>
-  <dt><code><a name="predefmacro-module">{@module}</a></code></dt>
+      used. For example, <code>@{@link edoc:file/2}</code> creates the
+      link {@link edoc:file/2}, and <code>@{@link
+      edoc:file/2. &lt;em&gt;this&lt;/em&gt;}</code> creates {@link
+      edoc:file/2. <em>this</em>} link.</dd>
+  <dt><code><a name="predefmacro-module">@{@module}</a></code></dt>
       <dd>Expands to the name of the current module. Only defined when a
       module is being processed.</dd>
-  <dt><code><a name="predefmacro-package">{@package}</a></code></dt>
+  <dt><code><a name="predefmacro-package">@{@package}</a></code></dt>
       <dd>Expands to the name of the current package.</dd>
-  <dt><code><a name="predefmacro-type">{@type
+  <dt><code><a name="predefmacro-type">@{@type
       <em>type-expression</em>}</a></code></dt>
       <dd>Formats a type expression within &lt;code&gt;...&lt;/code&gt;
       markup and with hypertext links for data types. For example,
-      <code>{@type {options, List::edoc:option_list()@}}</code>
-      generates "<code>{options, List::<a href="edoc.html#type-option_list">edoc:option_list()</a>}</code>". (Cf.
+      <code>@{@type {options, List::edoc:option_list()@@}}</code>
+      generates "{@type {options, List::edoc:option_list()@}}". (Cf.
       <a href="#escapes">Escape sequences</a> below.)</dd>
-  <dt><code><a name="predefmacro-time">{@time}</a></code></dt>
+  <dt><code><a name="predefmacro-time">@{@time}</a></code></dt>
       <dd>Expands to the current time, as "<tt>Hr:Min:Sec</tt>",
-      e.g. "1:4:27".</dd>
+      e.g. "{@time}".</dd>
 </dl>
 
 
@@ -716,58 +713,58 @@ information.
 <h4>@-escapes</h4>
 
 <p>To prevent certain characters from being interpreted as delimiters,
-for example to produce the text "<code>{@</code>" in the output, or use a
+for example to produce the text "<code>@{@</code>" in the output, or use a
 "<code>}</code>" character in the argument text of a macro call, the
 following escape sequences may be used: <dl>
-  <dt><code>@{</code></dt>
+  <dt><code>@@{</code></dt>
       <dd>Expands to "<code>{</code>". Example:
       <pre>
-   %% @doc An inline macro starts with the sequence "@{@".</pre>
+   %% @doc An inline macro starts with the sequence "@@@{@".</pre>
   </dd>
-  <dt><code>@}</code></dt>
+  <dt><code>@@}</code></dt>
       <dd>Expands to "<code>}</code>". Example:
       <pre>
-   %% @doc ...{@foo ...{Key, Value@}...}...</pre></dd>
-  <dt><code>@@</code></dt>
+   %% @doc ...@{@foo ...{Key, Value@@}...}...</pre></dd>
+  <dt><code>@@@@</code></dt>
       <dd>Expands to "<code>@</code>". Example:
       <pre>
-   %% @doc Contact us at support@@{@hostname}</pre>
+   %% @doc Contact us at support@@@@@{@hostname}</pre>
    Will generate the text "Contact us at support@vaporware.acme.com"
    if the macro <code>hostname</code> is bound to
    "<code>vaporware.acme.com</code>". Also:
    <pre>
    %% @doc You might want to write something like
-   %% @@foo that will expand to @foo and does not start
+   %% @@@@foo that will expand to @@foo and does not start
    %% a new tag even if it appears first in a line.</pre></dd>
 </dl>
 </p>
 
-<h4>Using <code>`...'</code>-quoting in XHTML</h4>
+<h4>Using `` `...' ''-quoting in XHTML</h4>
 
-<p>In XHTML text, the "<code>`</code>" character (Unicode <code>000060</code>,
+<p>In XHTML text, the "<code>&#x60;</code>" character (Unicode `000060',
 known as "grave accent" or "back-quote") can be used for verbatim
 quoting. This is expanded before XML parsing takes place.</p>
 
 <ul>
-  <li><p>A character sequence "<code>`...'</code>" or
-      "<code>``...''</code>" will be expanded to
-      "<code>&lt;code&gt;...&lt;/code&gt;</code>", where all occurrences of the special XML
-      characters "<code>&lt;</code>" and "<code>&amp;</code>" (and for completeness, also "<code>&gt;</code>") in
-      the quoted text have been escaped to "<code>&amp;lt;</code>", "<code>&amp;amp;</code>", and
-      "<code>&amp;gt;</code>", respectively.
+  <li><p>A character sequence "<code>&#x60;...'</code>" or
+      "<code>&#x60;&#x60;...''</code>" will be expanded to
+      "`<code>...</code>'", where all occurrences of the special XML
+      characters "`<'" and "`&'" (and for completeness, also "`>'") in
+      the quoted text have been escaped to "`&lt;'", "`&amp;'", and
+      "`&gt;'", respectively.
       All whitespace is stripped from the beginning and end of the
       quoted text.</p>
 
-      <p>Double back-quotes "<code>``...''</code>" can be used
-      to quote text containing single "<code>'</code>" characters. The automatic
+      <p>Double back-quotes "<code>&#x60;&#x60;...''</code>" can be used
+      to quote text containing single "`` ' ''" characters. The automatic
       stripping of any surrounding whitespace makes it possible to write
-      things like "<code>`` 'foo@bar' ''</code>".</p>
+      things like "<code>&#x60;&#x60; 'foo@bar' ''</code>".</p>
 
       <p>To quote text containing "<code>''</code>" verbatim,
-      explicit <code>&lt;code&gt;</code> markup or similar must be used.</p></li>
+      explicit `<code>' markup or similar must be used.</p></li>
 
-  <li><p>A character sequence "<code>```...'''</code>"
-      will be expanded to "<code>&lt;pre&gt;&lt;![CDATA[...]]&gt;&lt;/pre&gt;</code>", which disables
+  <li><p>A character sequence "<code>&#x60;&#x60;&#x60;...'''</code>"
+      will be expanded to "`<pre><![CDATA[...]]></pre>'", which disables
       all XML markup within the quoted text, and displays the result in
       fixed-font with preserved indentation. Whitespace is stripped from
       the end of the quoted text, but not from the beginning, except for
@@ -775,33 +772,33 @@ quoting. This is expanded before XML parsing takes place.</p>
       useful for multi-line code examples, or displayed
       one-liners.</p></li>
 
-  <li><p>To produce a single "<code>`</code>"-character in XML
-      without beginning a new quote, you can write "<code>`'</code>"
-      (no space between the "<code>`</code>" and the "<code>'</code>").
+  <li><p>To produce a single "<code>&#x60;</code>"-character in XML
+      without beginning a new quote, you can write "<code>&#x60;'</code>"
+      (no space between the "<code>&#x60;</code>" and the "<code>'</code>").
       You can of course also use the XML character entity
-      "<code>&amp;#x60;</code>".</p></li>
+      "`&#x60;'".</p></li>
 </ul>
 
 <p>Examples:
-  <pre>     %% @doc ...where the variable `Foo' refers to...</pre>
+  ```%% @doc ...where the variable `Foo' refers to... '''
 
-  <pre>     %% @doc ...returns the atom `` 'foo@erlang.org' ''...</pre>
+  ```%% @doc ...returns the atom `` 'foo@erlang.org' ''... '''
 
   <pre>
-     %% @doc ...use the command ```erl -name foo''' to...</pre>
+     %% @doc ...use the command &#x60;&#x60;&#x60;erl -name foo''' to...</pre>
 
   <pre>
      %% @doc ...as in the following code:
-     %% ```f(X) -&gt;
+     %% &#x60;&#x60;&#x60;f(X) ->
      %%       case X of
      %%          ...
      %%       end'''</pre>
 
   <pre>
      %% @doc ...or in the following:
-     %% ```
-     %%     g(X) -&gt;
-     %%       fun () -&gt; ... end
+     %% &#x60;&#x60;&#x60;
+     %%     g(X) ->
+     %%       fun () -> ... end
      %% '''</pre>
 </p>
 
@@ -816,5 +813,3 @@ code has been actually included in the Great Rewriting, but some of the
 central points have made it into the new system, such as better
 modularization and possibility to plug in different layout engines, and
 making EDoc understand the application directory layout.
-</body>
-</html>
