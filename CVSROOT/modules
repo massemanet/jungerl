@@ -35,6 +35,10 @@ jungerl/config
 # Added by tobbe, just for convenience...
 
 esmb -a jungerl/Makefile jungerl/README jungerl/doc jungerl/config jungerl/support jungerl/lib/esmb
+eradius -a jungerl/Makefile jungerl/README jungerl/doc jungerl/config jungerl/support jungerl/lib/eradius
+eldap -a jungerl/Makefile jungerl/README jungerl/doc jungerl/config jungerl/support jungerl/lib/eldap
+
+
 
 
 
