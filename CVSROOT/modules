@@ -29,7 +29,8 @@
 # Added by klacke, used by the eppnet application to
 # Just check out the files we need ....
 
-eppnetfiles -a jungerl/lib/enfs jungerl/lib/rpc jungerl/lib/msc
+eppnetfiles -a jungerl/lib/enfs jungerl/lib/rpc jungerl/lib/msc jungerl/support
+jungerl/config
 
 
 
