@@ -26,4 +26,4 @@
 #DEFAULT (echo ""; id; echo %{sVv}; date; cat) >> $CVSROOT/CVSROOT/commitlog
 
 # Send commit emails to the jungerl-commit list
-DEFAULT /cvsroot/sitedocs/CVSROOT/cvstools/syncmail %{sVv} jungerl-commit@lists.sourceforge.net
+DEFAULT /cvsroot/sitedocs/CVSROOT/cvstools/syncmail -C 3 -u %{sVv} jungerl-commit@lists.sourceforge.net
