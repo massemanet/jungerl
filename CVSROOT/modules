@@ -38,6 +38,8 @@ esmb -a jungerl/Makefile jungerl/README jungerl/doc jungerl/config jungerl/suppo
 eradius -a jungerl/Makefile jungerl/README jungerl/doc jungerl/config jungerl/support jungerl/lib/eradius
 eldap -a jungerl/Makefile jungerl/README jungerl/doc jungerl/config jungerl/support jungerl/lib/eldap
 
+erlmerge -a jungerl/lib/erlmerge
+
 
 
 
