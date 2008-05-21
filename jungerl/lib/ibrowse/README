@@ -22,6 +22,10 @@ Comments to : Chandrashekhar.Mullaparthi@t-mobile.co.uk
 
 CONTRIBUTIONS & CHANGE HISTORY
 ==============================
+21-05-2008 - * Fixed bug in reading some options from the ibrowse.conf file.
+               Reported by Erik Reitsma on the erlyaws mailing list
+             * Fixed bug when cleaning up closing connections
+
 27-03-2008 - * Major rewrite of the load balancing feature. Additional module,
                ibrowse_lb.erl, introduced to achieve this.
              * Can now get a handle to a connection process which is not part of
