@@ -39,13 +39,6 @@
 		max_pipeline_size,
 		num_cur_sessions = 0}).
 
--import(ibrowse_lib, [
-		      parse_url/1,
-		      printable_date/0,
-		      get_value/3
-		     ]).
-		      
-
 -include("ibrowse.hrl").
 
 %%====================================================================
