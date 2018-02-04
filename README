@@ -1,3 +1,23 @@
+  Jungerl was an experiment in code sharing, similar in spirit to
+github. It was well ahead of its time, started at "Mon Feb 10
+22:13:03 2003" by the inimitable Luke Gorrie. It was a CVS repo on
+Sourceforge, where everyone had the commit bit. It was host of quite a
+few early open-source Erlang programs. It was more or less abandoned
+by 2010. By then, not only had github started, but CVS was hopelessly
+inadequate compared to SVN.
+
+  Much of the code has found its way to github, but the Jungerl itself was
+abandoned on a Sourceforge backup. Purely out of a sense of archivological
+duty it was pulled off of that backup tape (kudos to Sourceforge for making
+that easy) and pushed to github.
+
+  Everything is left untouched; I have no idea if any of it still builds.
+Copyrights etc. of course belongs to the original authors; I've just moved
+it from sourceforge to github.
+
+  - mats cronqvist, Feb 4th, 2018
+
+
 How to use the Jungerl
 ======================================================================
 
